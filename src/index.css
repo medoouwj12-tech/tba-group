@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap');
+
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-primary: #DC2626;
+    --color-primary-hover: #B91C1C;
+    --color-primary-light: #FEE2E2;
+    --color-primary-dark: #991B1B;
+    --bg-light: #F9FAFB;
+    --bg-card-light: #FFFFFF;
+    --text-main-light: #1F2937;
+    --text-muted-light: #4B5563;
+  }
+
+  .dark {
+    --bg-light: #0B0F19;
+    --bg-card-light: #151D2A;
+    --text-main-light: #F9FAFB;
+    --text-muted-light: #9CA3AF;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Cairo', 'Tajawal', system-ui, -apple-system, sans-serif;
+    direction: rtl;
+  }
+
+  body {
+    background-color: var(--bg-light);
+    color: var(--text-main-light);
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111827;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #DC2626;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B91C1C;
+}
+
+/* Glassmorphism Classes */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.dark .glass-effect {
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass-card {
+  background: rgba(21, 29, 42, 0.9);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Red Pulse Animation for CTA Buttons */
+@keyframes pulse-subtle {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(220, 38, 38, 0);
+  }
+}
+
+.pulse-red {
+  animation: pulse-subtle 2.5s infinite;
+}
+
+/* Fade In animation for menus/modals */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+/* Dir LTR override for phone numbers inside RTL */
+.dir-ltr {
+  direction: ltr;
+  text-align: right;
+}
+
+/* WhatsApp Floating Button Pulse */
+@keyframes whatsapp-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55);
+  }
+  50% {
+    box-shadow: 0 0 0 16px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
