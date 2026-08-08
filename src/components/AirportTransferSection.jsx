@@ -96,35 +96,56 @@ export default function AirportTransferSection() {
         {/* Fleet Showcase Grid */}
         <div className="mb-16">
           <h3 className="text-2xl font-bold text-center text-white mb-8">
-            أسطول فانات مرسيدس VIP الحديثة
+            ✈️ خدمة استقبال وتوصيل المطارات
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {FLEET_DATA.map((car) => (
               <div
                 key={car.id}
-                className="bg-slate-800/60 border border-slate-700 rounded-3xl p-6 flex flex-col sm:flex-row items-center gap-6 hover:border-red-500/40 transition-colors"
+                className="bg-slate-800/60 border border-slate-700 rounded-3xl p-6 flex flex-col gap-5 hover:border-red-500/40 transition-colors"
               >
-                <div className="w-full sm:w-1/2 h-44 rounded-2xl overflow-hidden relative shrink-0">
-                  <img src={car.image} alt={car.name} className="w-full h-full object-cover" />
-                  <span className="absolute top-2 right-2 bg-red-600 text-white text-[11px] font-bold px-2.5 py-1 rounded-full">
-                    {car.tag}
-                  </span>
+                {/* Top: Image + Name */}
+                <div className="flex flex-col sm:flex-row items-center gap-5">
+                  <div className="w-full sm:w-2/5 h-40 rounded-2xl overflow-hidden relative shrink-0">
+                    <img src={car.image} alt={car.name} className="w-full h-full object-cover" />
+                    <span className="absolute top-2 right-2 bg-red-600 text-white text-[11px] font-bold px-2.5 py-1 rounded-full">
+                      {car.tag}
+                    </span>
+                  </div>
+                  <div className="w-full sm:w-3/5 space-y-2">
+                    <h4 className="text-xl font-black text-white">{car.name}</h4>
+                    <p className="text-xs text-red-400 font-bold flex items-center gap-1">
+                      <Users className="w-4 h-4" />
+                      {car.capacity}
+                    </p>
+                    <ul className="space-y-1.5 pt-1">
+                      {car.features.map((f, i) => (
+                        <li key={i} className="text-xs text-slate-300 flex items-center gap-1.5">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-green-500 shrink-0" />
+                          {f}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-                <div className="w-full sm:w-1/2 space-y-2">
-                  <h4 className="text-lg font-black text-white">{car.name}</h4>
-                  <p className="text-xs text-red-400 font-bold flex items-center gap-1">
-                    <Users className="w-4 h-4" />
-                    {car.capacity}
-                  </p>
-                  <ul className="space-y-1 pt-2">
-                    {car.features.map((f, i) => (
-                      <li key={i} className="text-[11px] text-slate-300 flex items-center gap-1.5">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-red-500" />
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+
+                {/* Pricing Table */}
+                {car.pricing && car.pricing.length > 0 && (
+                  <div className="border-t border-slate-700/60 pt-4">
+                    <p className="text-[11px] text-slate-400 font-bold uppercase tracking-widest mb-3">
+                      💰 الأسعار
+                    </p>
+                    <div className="grid grid-cols-2 gap-3">
+                      {car.pricing.map((p, i) => (
+                        <div key={i} className="bg-slate-900/70 rounded-2xl p-3 text-center border border-slate-700/60">
+                          <p className="text-[10px] text-slate-400 mb-1 leading-snug">{p.airport}</p>
+                          <p className="text-xl font-black text-green-400">{p.price}</p>
+                          <p className="text-[10px] text-slate-500">للرحلة كاملة</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             ))}
           </div>
