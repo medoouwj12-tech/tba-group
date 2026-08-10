@@ -91,16 +91,34 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              {/* Working Hours */}
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-red-600/20 text-red-500 flex items-center justify-center shrink-0">
-                  <Clock className="w-6 h-6" />
-                </div>
-                <div>
-                  <span className="text-xs text-slate-400 font-semibold block">ساعات العمل والدعم</span>
-                  <p className="text-sm font-bold text-white mt-0.5">
-                    24 ساعة / 7 أيام في الأسبوع
-                  </p>
+              {/* Social Channels List */}
+              <div className="pt-4 border-t border-slate-700 space-y-3">
+                <span className="text-xs text-slate-400 font-bold block">صفحاتنا الرسمية:</span>
+                <div className="flex flex-wrap gap-2">
+                  <a
+                    href="https://instagram.com/turkey_taksim"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 hover:border-pink-500 text-xs font-bold text-slate-200 hover:text-pink-400 transition-colors flex items-center gap-1.5"
+                  >
+                    <span>📷 إنستغرام</span>
+                  </a>
+                  <a
+                    href="https://tiktok.com/@turkey_taksim"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 hover:border-cyan-500 text-xs font-bold text-slate-200 hover:text-cyan-400 transition-colors flex items-center gap-1.5"
+                  >
+                    <span>🎵 تيك توك</span>
+                  </a>
+                  <a
+                    href="https://facebook.com/turkeytaksim"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 hover:border-blue-500 text-xs font-bold text-slate-200 hover:text-blue-400 transition-colors flex items-center gap-1.5"
+                  >
+                    <span>👍 فيسبوك</span>
+                  </a>
                 </div>
               </div>
             </div>
