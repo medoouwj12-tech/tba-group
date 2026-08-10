@@ -12,8 +12,7 @@ export default function TourBookingModal({ isOpen, onClose, selectedTour }) {
     name: "",
     phone: "",
     hotel: "",
-    paymentMethod: "الدفع خلال الرحلة (نقداً للمرشد)",
-    notes: ""
+    paymentMethod: "الدفع خلال الرحلة (نقداً للمرشد)"
   });
 
   useEffect(() => {
@@ -215,20 +214,6 @@ export default function TourBookingModal({ isOpen, onClose, selectedTour }) {
                 لا يلزمك دفع أي مبالغ مقدمة. تسلم القيمة نقداً للمرشد السياحي يوم الرحلة.
               </p>
             </div>
-          </div>
-
-          {/* Notes Optional */}
-          <div>
-            <label className="block text-xs font-bold text-slate-700 dark:text-slate-200 mb-1">
-              ملاحظات إضافية (اختياري)
-            </label>
-            <input
-              type="text"
-              placeholder="مثال: نريد كسي أطفال / كبار السن معانا"
-              value={formData.notes}
-              onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-              className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl px-4 py-2 text-sm font-medium text-slate-900 dark:text-white focus:ring-2 focus:ring-red-500 focus:outline-none"
-            />
           </div>
 
           {/* Submit Button */}

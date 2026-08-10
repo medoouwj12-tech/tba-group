@@ -11,8 +11,7 @@ export function createTourBookingWhatsAppUrl(data) {
     name,
     phone,
     hotel,
-    paymentMethod = "الدفع خلال الرحلة",
-    notes
+    paymentMethod = "الدفع خلال الرحلة"
   } = data;
 
   const message = `✨ *طلب حجز رحلة سياحية - TBA Group* ✨
@@ -24,7 +23,7 @@ export function createTourBookingWhatsAppUrl(data) {
 📞 *رقم التواصل:* ${phone || "غير مدون"}
 🏨 *الفندق ورقم الغرفة:* ${hotel || "غير مدون"}
 💳 *طريقة الدفع:* ${paymentMethod}
-${notes ? `📝 *ملاحظات إضافية:* ${notes}\n` : ""}-----------------------------------
+-----------------------------------
 يسعدنا تأكيد الحجز معكم وإرسال تفاصيل انطلاق الرحلة. شكراً لثقتكم بـ TBA Group 🇹🇷`;
 
   return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
