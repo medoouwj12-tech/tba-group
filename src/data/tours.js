@@ -2,23 +2,23 @@ export const TOURS_DATA = [
   // --- رحلات جماعية بباص ---
   {
     id: "sapanca-masukiye-group",
-    title: "رحلة سبانجا ومعشوقية والمطل الزجاجي",
+    title: "رحلة سبانجا ومعشوقية",
     subtitle: "شلالات معشوقية – بحيرة سبانجا – المطل الزجاجي – حديقة الأسود – أكواريوم – زيبلاين – ATV",
     category: "group",
     categoryLabel: "رحلات جماعية بباص 🚌",
-    price: 1200,
-    currency: "₺",
-    originalPrice: 1500,
+    price: 10,
+    currency: "$",
+    originalPrice: 15,
     rating: 4.9,
     reviewsCount: 340,
     duration: "يوم كامل (10-12 ساعة)",
     includes: [
       "🚌 النقل من وإلى الفندق",
       "🍽️ وجبة الغداء",
-      "🗣️ مرشد سياحي يتحدث العربية",
-      "🪟 دخول المطل الزجاجي"
+      "🗣️ مرشد سياحي يتحدث العربية"
     ],
     optionals: [
+      "🪟 دخول المطل الزجاجي",
       "🦁 حديقة الأسود",
       "🐠 الأكواريوم",
       "🚠 منطقة التلفريك",
@@ -46,9 +46,9 @@ export const TOURS_DATA = [
     subtitle: "جبل أولوداغ – العبارة البحرية – مناحل العسل – سوق المربى – منطقة التلفريك – ATV",
     category: "group",
     categoryLabel: "رحلات جماعية بباص 🚌",
-    price: 1250,
-    currency: "₺",
-    originalPrice: 1550,
+    price: 15,
+    currency: "$",
+    originalPrice: 20,
     rating: 4.95,
     reviewsCount: 420,
     duration: "يوم كامل (12-14 ساعة)",
